@@ -216,40 +216,13 @@ p {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-}
-
-.about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.stat {
-    text-align: center;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.stat h3 {
-    font-size: 2.5rem;
-    color: #000;
-    margin-bottom: 0.5rem;
-}
-
-.stat p {
-    color: #666;
-    font-weight: 500;
 }
 
 /* Research Highlights */
@@ -1172,13 +1145,6 @@ p {
         font-size: 2.5rem;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr 1fr;
-    }
 
     .contact-content {
         grid-template-columns: 1fr;
@@ -1217,9 +1183,6 @@ p {
         font-size: 2rem;
     }
 
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
 
     .impact-stats {
         grid-template-columns: 1fr;
