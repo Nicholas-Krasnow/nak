@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dr. [Your Name]</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Dr. [Your Name]</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="research.html" class="nav-link">Research Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a href="publications.html" class="nav-link active">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Publications</h1>
+                <p class="page-subtitle">A comprehensive list of my research publications and contributions to the field</p>
+            </div>
+        </section>
+
+        <!-- Featured Publications -->
+        <section class="featured-publications">
+            <div class="container">
+                <h2>Featured Publications</h2>
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/300x400/000000/FFFFFF?text=Nature+Cell+Biology" alt="Featured Publication 1">
+                        </div>
+                        <div class="featured-content">
+                            <h3>Novel Mechanisms of Gene Regulation in Development</h3>
+                            <p class="featured-authors"><strong>Your Name</strong>, Smith, J., Johnson, A., Wilson, B.</p>
+                            <p class="featured-journal"><em>Nature Cell Biology</em>, 26(3), 245-258 (2024)</p>
+                            <p class="featured-abstract">This study reveals novel mechanisms of gene regulation during embryonic development, providing insights into how cellular differentiation is controlled at the molecular level.</p>
+                            <div class="featured-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-item">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/300x400/000000/FFFFFF?text=Science" alt="Featured Publication 2">
+                        </div>
+                        <div class="featured-content">
+                            <h3>CRISPR-Based Gene Editing in Stem Cells</h3>
+                            <p class="featured-authors"><strong>Your Name</strong>, Miller, F., Garcia, G.</p>
+                            <p class="featured-journal"><em>Science</em>, 380(6642), 1234-1240 (2023)</p>
+                            <p class="featured-abstract">We developed a novel CRISPR-based approach for precise gene editing in human pluripotent stem cells, enabling new therapeutic applications.</p>
+                            <div class="featured-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-item">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/300x400/000000/FFFFFF?text=Nature+Genetics" alt="Featured Publication 3">
+                        </div>
+                        <div class="featured-content">
+                            <h3>Epigenetic Regulation in Cancer Development</h3>
+                            <p class="featured-authors"><strong>Your Name</strong>, White, K., Black, P.</p>
+                            <p class="featured-journal"><em>Nature Genetics</em>, 54(8), 1123-1135 (2022)</p>
+                            <p class="featured-abstract">This study identifies key epigenetic modifications that drive cancer progression and suggests new therapeutic targets.</p>
+                            <div class="featured-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter and Search -->
+        <section class="pub-filters">
+            <div class="container">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="year-filter">Filter by Year:</label>
+                        <select id="year-filter">
+                            <option value="all">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="type-filter">Filter by Type:</label>
+                        <select id="type-filter">
+                            <option value="all">All Types</option>
+                            <option value="journal">Journal Articles</option>
+                            <option value="conference">Conference Papers</option>
+                            <option value="review">Review Articles</option>
+                            <option value="book">Book Chapters</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search publications...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications List -->
+        <section class="publications-list">
+            <div class="container">
+                <div class="publications-container">
+                    <!-- 2024 Publications -->
+                    <div class="year-section" data-year="2024">
+                        <h2 class="year-header">2024</h2>
+                        
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-header">
+                                <h3>Novel Mechanisms of Gene Regulation in Development</h3>
+                                <span class="pub-type">Journal Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Your Name</strong>, Smith, J., Johnson, A., Wilson, B.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Nature Cell Biology</em>, 26(3), 245-258 (2024)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>This study reveals novel mechanisms of gene regulation during embryonic development, 
+                                providing insights into how cellular differentiation is controlled at the molecular level.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-header">
+                                <h3>Single-Cell Analysis of Cellular Heterogeneity</h3>
+                                <span class="pub-type">Journal Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                Brown, C., <strong>Your Name</strong>, Davis, E.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Cell Reports</em>, 42(1), 112345 (2024)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>Using single-cell RNA sequencing, we identified distinct cellular subpopulations 
+                                and their functional roles in tissue homeostasis and disease.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2023 Publications -->
+                    <div class="year-section" data-year="2023">
+                        <h2 class="year-header">2023</h2>
+                        
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-header">
+                                <h3>CRISPR-Based Gene Editing in Stem Cells</h3>
+                                <span class="pub-type">Journal Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Your Name</strong>, Miller, F., Garcia, G.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Science</em>, 380(6642), 1234-1240 (2023)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>We developed a novel CRISPR-based approach for precise gene editing in human 
+                                pluripotent stem cells, enabling new therapeutic applications.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="review">
+                            <div class="pub-header">
+                                <h3>Advances in Computational Biology: A Review</h3>
+                                <span class="pub-type">Review Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Your Name</strong>, Anderson, L.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Annual Review of Cell and Developmental Biology</em>, 39, 1-25 (2023)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>Comprehensive review of recent advances in computational biology methods 
+                                and their applications to understanding biological systems.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="conference">
+                            <div class="pub-header">
+                                <h3>Machine Learning Approaches for Drug Discovery</h3>
+                                <span class="pub-type">Conference Paper</span>
+                            </div>
+                            <div class="pub-authors">
+                                Taylor, H., <strong>Your Name</strong>, Lee, M.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Proceedings of the International Conference on Machine Learning</em>, 2023
+                            </div>
+                            <div class="pub-abstract">
+                                <p>We present a novel machine learning framework for predicting drug-target 
+                                interactions using multi-modal biological data.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022 Publications -->
+                    <div class="year-section" data-year="2022">
+                        <h2 class="year-header">2022</h2>
+                        
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-header">
+                                <h3>Epigenetic Regulation in Cancer Development</h3>
+                                <span class="pub-type">Journal Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Your Name</strong>, White, K., Black, P.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Nature Genetics</em>, 54(8), 1123-1135 (2022)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>This study identifies key epigenetic modifications that drive cancer 
+                                progression and suggests new therapeutic targets.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-header">
+                                <h3>Protein-Protein Interaction Networks in Development</h3>
+                                <span class="pub-type">Journal Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                Green, R., <strong>Your Name</strong>, Blue, S.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Developmental Cell</em>, 57(4), 456-468 (2022)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>We mapped the protein-protein interaction networks that control 
+                                embryonic development using high-throughput approaches.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2021 Publications -->
+                    <div class="year-section" data-year="2021">
+                        <h2 class="year-header">2021</h2>
+                        
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-header">
+                                <h3>Stem Cell Differentiation Pathways</h3>
+                                <span class="pub-type">Journal Article</span>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Your Name</strong>, Purple, V., Orange, O.
+                            </div>
+                            <div class="pub-journal">
+                                <em>Cell Stem Cell</em>, 28(3), 234-246 (2021)
+                            </div>
+                            <div class="pub-abstract">
+                                <p>Comprehensive analysis of the molecular pathways that control 
+                                stem cell differentiation into specific cell types.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                                <a href="#" class="btn btn-small">PubMed</a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="book">
+                            <div class="pub-header">
+                                <h3>Molecular Biology of Development</h3>
+                                <span class="pub-type">Book Chapter</span>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Your Name</strong>, Red, R.
+                            </div>
+                            <div class="pub-journal">
+                                <em>In: Advanced Topics in Developmental Biology</em>, Academic Press, 2021
+                            </div>
+                            <div class="pub-abstract">
+                                <p>Comprehensive chapter covering the latest advances in understanding 
+                                the molecular mechanisms of development.</p>
+                            </div>
+                            <div class="pub-links">
+                                <a href="#" class="btn btn-small">PDF</a>
+                                <a href="#" class="btn btn-small">DOI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources -->
+        <section class="pub-resources">
+            <div class="container">
+                <h2>Additional Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>Google Scholar</h3>
+                        <p>View my complete publication record and citation metrics</p>
+                        <a href="#" class="btn btn-secondary">Visit Profile</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>ORCID</h3>
+                        <p>My unique researcher identifier and publication list</p>
+                        <a href="#" class="btn btn-secondary">View ORCID</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>ResearchGate</h3>
+                        <p>Connect with collaborators and access full-text papers</p>
+                        <a href="#" class="btn btn-secondary">Visit Profile</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>PubMed</h3>
+                        <p>Search my publications in the PubMed database</p>
+                        <a href="#" class="btn btn-secondary">Search PubMed</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. [Your Name]</h3>
+                    <p>Professor of [Your Field]<br>[Your Institution]</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                        <a href="#"><i class="fab fa-orcid"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. [Your Name]. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
