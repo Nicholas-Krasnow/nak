@@ -94,45 +94,68 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Contact form handling
-    const contactForm = document.querySelector('.contact-form form');
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const message = this.querySelector('textarea').value;
+            const name = this.querySelector('input[name="name"]').value;
+            const email = this.querySelector('input[name="email"]').value;
+            const message = this.querySelector('textarea[name="message"]').value;
 
             // Basic validation
             if (!name || !email || !message) {
-                alert('Please fill in all fields.');
+                showFormStatus('Please fill in all fields.', 'error');
                 return;
             }
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
+                showFormStatus('Please enter a valid email address.', 'error');
                 return;
             }
 
-            // Simulate form submission
+            // Show loading state
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 2000);
+            // Create mailto link with form data
+            const subject = `Contact from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:nicholas.krasnow@institution.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showFormStatus('Thank you! Your email client should open with a pre-filled message. Please send the email to complete your inquiry.', 'success');
+            
+            // Reset form
+            this.reset();
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
         });
+    }
+
+    // Function to show form status messages
+    function showFormStatus(message, type) {
+        if (formStatus) {
+            formStatus.textContent = message;
+            formStatus.className = `form-status ${type}`;
+            formStatus.style.display = 'block';
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        }
     }
 
     // Add scroll effect to navbar
