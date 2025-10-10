@@ -172,28 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
+    // Elements appear without animation
     const animatedElements = document.querySelectorAll('.highlight-card, .research-card, .publication-item, .project-item');
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
     });
 
     // Add hover effects to buttons
@@ -222,16 +205,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add loading animation for images
+    // Images load without animation
     const images = document.querySelectorAll('img');
     images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.5s ease';
+        img.style.opacity = '1';
+        img.style.transform = 'none';
+        img.style.transition = 'none';
+        img.style.animation = 'none';
     });
+    
+    // Specifically force hero image to be static
+    const heroImage = document.querySelector('.hero-image img');
+    if (heroImage) {
+        heroImage.style.opacity = '1';
+        heroImage.style.transform = 'none';
+        heroImage.style.transition = 'none';
+        heroImage.style.animation = 'none';
+    }
 
     // Add keyboard navigation support
     document.addEventListener('keydown', function(e) {
