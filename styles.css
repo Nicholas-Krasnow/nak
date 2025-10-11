@@ -296,6 +296,15 @@ p {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    
+    .featured-layout .featured-image {
+        order: 2;
+        height: 200px;
+    }
+    
+    .featured-layout .featured-content {
+        order: 1;
+    }
 }
 
 .highlight-card {
