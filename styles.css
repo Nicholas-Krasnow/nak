@@ -298,13 +298,13 @@ p {
     }
     
     .featured-layout .featured-image {
-        order: 2;
+        order: 1;
         height: 200px !important;
         max-height: 200px;
     }
     
     .featured-layout .featured-content {
-        order: 1;
+        order: 2;
     }
     
     .featured-image img {
@@ -326,14 +326,14 @@ p {
     }
     
     .featured-publications .featured-layout .featured-image {
-        order: 2 !important;
+        order: 1 !important;
         height: 200px !important;
         max-height: 200px !important;
         width: 100% !important;
     }
     
     .featured-publications .featured-layout .featured-content {
-        order: 1 !important;
+        order: 2 !important;
     }
     
     .featured-publications .featured-image img {
@@ -1280,11 +1280,11 @@ p {
     .featured-image {
         height: 150px !important;
         max-height: 150px !important;
-        order: 2 !important;
+        order: 1 !important;
     }
     
     .featured-content {
-        order: 1 !important;
+        order: 2 !important;
     }
 
 }
