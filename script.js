@@ -32,66 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Publications filtering functionality
-    const yearFilter = document.getElementById('year-filter');
-    const typeFilter = document.getElementById('type-filter');
-    const searchInput = document.getElementById('search-input');
-
-    if (yearFilter && typeFilter && searchInput) {
-        // Filter publications based on selected criteria
-        function filterPublications() {
-            const selectedYear = yearFilter.value;
-            const selectedType = typeFilter.value;
-            const searchTerm = searchInput.value.toLowerCase();
-
-            const yearSections = document.querySelectorAll('.year-section');
-            const publicationItems = document.querySelectorAll('.publication-item');
-
-            yearSections.forEach(section => {
-                const year = section.getAttribute('data-year');
-                let sectionVisible = false;
-
-                // Check if year matches filter
-                if (selectedYear === 'all' || selectedYear === year) {
-                    const items = section.querySelectorAll('.publication-item');
-                    items.forEach(item => {
-                        const type = item.getAttribute('data-type');
-                        const title = item.querySelector('h3').textContent.toLowerCase();
-                        const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
-                        const journal = item.querySelector('.pub-journal').textContent.toLowerCase();
-                        const abstract = item.querySelector('.pub-abstract p').textContent.toLowerCase();
-
-                        const matchesType = selectedType === 'all' || selectedType === type;
-                        const matchesSearch = searchTerm === '' || 
-                            title.includes(searchTerm) || 
-                            authors.includes(searchTerm) || 
-                            journal.includes(searchTerm) || 
-                            abstract.includes(searchTerm);
-
-                        if (matchesType && matchesSearch) {
-                            item.style.display = 'block';
-                            sectionVisible = true;
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                } else {
-                    section.style.display = 'none';
-                }
-
-                // Show/hide year section based on visibility
-                section.style.display = sectionVisible ? 'block' : 'none';
-            });
-        }
-
-        // Add event listeners
-        yearFilter.addEventListener('change', filterPublications);
-        typeFilter.addEventListener('change', filterPublications);
-        searchInput.addEventListener('input', filterPublications);
-
-        // Initialize filter
-        filterPublications();
-    }
 
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
@@ -205,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Images load without animation
-    const images = document.querySelectorAll('img');
+    // Images load without animation (except hero image)
+    const images = document.querySelectorAll('img:not(.hero-image img)');
     images.forEach(img => {
         img.style.opacity = '1';
         img.style.transform = 'none';
@@ -214,13 +154,14 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.animation = 'none';
     });
     
-    // Specifically force hero image to be static
+    // Allow hero image to animate naturally
     const heroImage = document.querySelector('.hero-image img');
     if (heroImage) {
-        heroImage.style.opacity = '1';
-        heroImage.style.transform = 'none';
-        heroImage.style.transition = 'none';
-        heroImage.style.animation = 'none';
+        // Let CSS animation handle the hero image
+        heroImage.style.opacity = '';
+        heroImage.style.transform = '';
+        heroImage.style.transition = '';
+        heroImage.style.animation = '';
     }
 
     // Add keyboard navigation support

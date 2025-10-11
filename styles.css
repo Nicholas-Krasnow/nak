@@ -207,26 +207,23 @@ p {
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: fadeInUp 1s ease forwards;
 }
 
-/* Force hero image to be static */
-.hero-image {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.hero-image img {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
-}
 
 /* About Section */
 .about {
@@ -709,6 +706,17 @@ p {
     background: #f8f9fa;
 }
 
+.all-publications-header {
+    padding: 60px 0 0px;
+    background: #fff;
+}
+
+.all-publications-header h2 {
+    color: #000;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
 .featured-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -784,51 +792,24 @@ p {
     flex-wrap: wrap;
 }
 
-.pub-filters {
-    padding: 40px 0;
-    background: white;
-    border-bottom: 1px solid #eee;
-}
-
-.filter-controls {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-items: end;
-}
-
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.filter-group label {
-    font-weight: 500;
-    color: #000;
-}
-
-.filter-group select,
-.filter-group input {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
 
 .publications-list {
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .year-section {
     margin-bottom: 3rem;
 }
 
+.year-section:first-of-type {
+    margin-top: 0;
+}
+
 .year-header {
     color: #000;
     border-bottom: 3px solid #000;
     padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .pub-header {
@@ -1211,14 +1192,6 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .filter-group {
-        width: 100%;
-    }
 
     .impact-content {
         grid-template-columns: 1fr;
@@ -1253,7 +1226,4 @@ p {
         grid-template-columns: 1fr 1fr;
     }
 
-    .filter-controls {
-        gap: 1rem;
-    }
 }
