@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Reset and Base Styles - Mobile Image Fix */
 * {
     margin: 0;
     padding: 0;
@@ -341,6 +341,22 @@ p {
         max-height: 200px !important;
         width: auto !important;
         object-fit: contain !important;
+    }
+    
+    /* Force image above text on mobile - most specific override */
+    @media (max-width: 768px) {
+        .featured-publications .featured-layout {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        
+        .featured-publications .featured-layout .featured-image {
+            order: 1 !important;
+        }
+        
+        .featured-publications .featured-layout .featured-content {
+            order: 2 !important;
+        }
     }
 }
 
@@ -1287,4 +1303,15 @@ p {
         order: 2 !important;
     }
 
+}
+
+/* Final override for mobile image positioning */
+@media (max-width: 768px) {
+    .featured-publications .featured-layout .featured-image {
+        order: 1 !important;
+    }
+    
+    .featured-publications .featured-layout .featured-content {
+        order: 2 !important;
+    }
 }
