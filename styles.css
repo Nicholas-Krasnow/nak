@@ -299,11 +299,29 @@ p {
     
     .featured-layout .featured-image {
         order: 2;
-        height: 200px;
+        height: 200px !important;
+        max-height: 200px;
     }
     
     .featured-layout .featured-content {
         order: 1;
+    }
+    
+    .featured-image img {
+        height: 100% !important;
+        max-height: 200px;
+        object-fit: contain;
+    }
+    
+    .featured-layout {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ensure mobile layout for featured publications */
+    .featured-publications .featured-layout {
+        display: flex;
+        flex-direction: column;
     }
 }
 
