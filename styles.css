@@ -190,7 +190,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('structures.png');
+    background-image: url('structures.png?v=1');
     background-size: 550px;
     background-position: left top;
     background-repeat: no-repeat;
