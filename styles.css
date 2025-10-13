@@ -1270,15 +1270,31 @@ p {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        position: relative;
     }
 
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    .hero-content > div:first-child::before {
+    .hero-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('structures.png?v=1');
         background-size: 300px;
         background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .hero-content > * {
+        position: relative;
+        z-index: 2;
     }
 
 
@@ -1311,7 +1327,7 @@ p {
         font-size: 2rem;
     }
 
-    .hero-content > div:first-child::before {
+    .hero-content::before {
         background-size: 250px;
         background-position: center center;
     }
