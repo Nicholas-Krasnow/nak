@@ -1,4 +1,4 @@
-/* Reset and Base Styles - Mobile Image Fix */
+/* Reset and Base Styles - Mobile Image Fix - Background Update */
 * {
     margin: 0;
     padding: 0;
@@ -158,6 +158,7 @@ p {
 /* Hero Section */
 .hero {
     background: #fff;
+    position: relative;
     color: #000;
     padding: 120px 0 80px;
     margin-top: 70px;
@@ -165,6 +166,8 @@ p {
 }
 
 .hero-container {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -174,17 +177,40 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+}
+
+.hero-content > div:first-child {
+    position: relative;
+}
+
+.hero-content > div:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('structures.png');
+    background-size: 550px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-content > div:first-child > * {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
     color: #000;
 }
 
 .hero h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
     margin-bottom: 1.5rem;
     color: #333;
@@ -192,6 +218,7 @@ p {
 
 .hero-description {
     font-size: 1.1rem;
+    margin-top: 6rem;
     margin-bottom: 2rem;
     color: #333;
 }
