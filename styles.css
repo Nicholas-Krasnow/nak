@@ -824,6 +824,14 @@ p {
     margin-bottom: 0;
 }
 
+.all-publications-note {
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: #555;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
 .featured-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
